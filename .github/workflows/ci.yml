@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - previous
     paths-ignore:
       - '.github/**'      
   schedule:
