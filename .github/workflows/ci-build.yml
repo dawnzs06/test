@@ -31,4 +31,5 @@ jobs:
           echo "环境变量为 ${{ env.ARTIFACTORY_API_KEY }}"
         name: Publish
         env:
+          ACTIONS_STEP_DEBUG: true
           ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
