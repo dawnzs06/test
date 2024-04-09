@@ -28,14 +28,14 @@ jobs:
       - name: test1
         run: 
             echo "1:123,123"
-        if: ${{ secrets.ARTIFACTORY_API_KEY == "123" }} 
+        if: ${{ secrets.ARTIFACTORY_API_KEY }} == "123"
         env:
           ACTIONS_STEP_DEBUG: true
           ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
       - name: test2
         run: 
             echo "2:444,444"
-        if: ${{ secrets.ARTIFACTORY_API_KEY == "444" }} 
+        if: ${{ secrets.ARTIFACTORY_API_KEY }} == "444" 
         env:
           ACTIONS_STEP_DEBUG: true
           ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
