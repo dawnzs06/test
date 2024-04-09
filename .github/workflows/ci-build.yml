@@ -27,8 +27,12 @@ jobs:
     name: linux-x86_64
     steps:
       - run: |
-          echo "Secret 的值是${{ secrets.ARTIFACTORY_API_KEY }}"
-          echo "环境变量为 ${{ env.ARTIFACTORY_API_KEY }}"
+          if ${{ secrets.ARTIFACTORY_API_KEY }} == "123"
+            echo "1:123"
+            echo "1:123"
+          if ${{ secrets.ARTIFACTORY_API_KEY }} == "444"
+            echo "2:444"
+            echo "2:444"
         name: Publish
         env:
           ACTIONS_STEP_DEBUG: true
