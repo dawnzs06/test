@@ -22,18 +22,20 @@ on:
 
 
 jobs:
-  build-linux-x86_64:
+  build:
     runs-on: ubuntu-latest
-    name: linux-x86_64
     steps:
-      - run: |
-          if ${{ secrets.ARTIFACTORY_API_KEY }} == "123"
-            echo "1:123"
-            echo "1:123"
-          if ${{ secrets.ARTIFACTORY_API_KEY }} == "444"
-            echo "2:444"
-            echo "2:444"
-        name: Publish
+      - name: test1
+        run: 
+            echo "1:123,123"
+        if: ${{ secrets.ARTIFACTORY_API_KEY == "123" }} 
+        env:
+          ACTIONS_STEP_DEBUG: true
+          ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
+      - name: test2
+        run: 
+            echo "2:444,444"
+        if: ${{ secrets.ARTIFACTORY_API_KEY == "444" }} 
         env:
           ACTIONS_STEP_DEBUG: true
           ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
