@@ -17,10 +17,10 @@ name: Build project
 
 on:
   push:
-    branches: [ previous ]
+    branches: [ previous1 ]
   workflow_dispatch:
   pull_request:
-    branches: [ previous ]
+    branches: [ previous1 ]
 
 
 jobs:
