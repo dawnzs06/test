@@ -19,6 +19,8 @@ on:
   push:
     branches: [ previous ]
   workflow_dispatch:
+  pull_request:
+    branches: [ previous ]
 
 
 jobs:
