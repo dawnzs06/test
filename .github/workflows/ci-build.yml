@@ -42,14 +42,6 @@ jobs:
         
         env:
           ACTIONS_STEP_DEBUG: true
-          API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
-  job2:
-    runs-on: ubuntu-latest 
+          API_KEY: ${{ secrets.GITHUB_TOKEN }}
 
-    
-    steps:
-      - name: Step 2
-        run: echo "This is step 2"
-      - name: Step 3
-        run: echo "This is step 3"
       
