@@ -26,6 +26,7 @@ on:
 jobs:
   build:
     if: 1==2
+    4
     runs-on: ubuntu-latest
     steps:
       - name: test1
